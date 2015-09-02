@@ -1,0 +1,6 @@
+#!/bin/bash
+
+LOADER="edu.psu.citeseerx.loaders.DocumentSingleIndexUpdaterLoader"
+BOOT_FILE="updates.txt"
+
+source common

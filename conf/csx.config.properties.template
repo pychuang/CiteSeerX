@@ -56,6 +56,8 @@ jdbc.csxemetadata.password=
 
 solr.selectUrl=http://localhost:8893/solr/citeseerx/select
 solr.updateUrl=http://localhost:8893/solr/citeseerx
+solr.zkHosts=serv0.ist.psu.edu:2181,serv1.ist.psu.edu:2181,serv2.ist.psu.edu:2181
+solr.collection=citeseerx
 solr.selectPeopleUrl=http://localhost:8080/solrPeople/select
 solr.updatePeopleUrl=http://localhost:8080/solrPeople/update
 solr.selectTableUrl=http://localhost:8893/solr-table/select

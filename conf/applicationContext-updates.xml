@@ -67,6 +67,19 @@
     <property name="redoAll" value="false"/>
   </bean>
 
+  <bean id="documentSingleIndexUpdater" class="edu.psu.citeseerx.updates.DocumentSingleIndexUpdater">
+    <property name="solrURL" value="${solr.updateUrl}"/>
+    <property name="CSXDAO" ref="citeseerx"/>
+    <property name="citeClusterDAO" ref="citegraph"/>
+  </bean>
+
+  <bean id="documentCloudIndexUpdater" class="edu.psu.citeseerx.updates.DocumentCloudIndexUpdater">
+    <property name="zkHosts" value="${solr.zkHosts}"/>
+    <property name="solrCollection" value="${solr.collection}"/>
+    <property name="CSXDAO" ref="citeseerx"/>
+    <property name="citeClusterDAO" ref="citegraph"/>
+  </bean>
+
   <bean id="tableIndexUpdater" class="edu.psu.citeseerx.updates.TableIndexUpdater">
    <property name="solrURL" value="${solr.updateTableUrl}"/>
    <property name="CSXDAO" ref="citeseerx"/>
