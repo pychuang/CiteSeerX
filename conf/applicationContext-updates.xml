@@ -60,13 +60,6 @@
     </property>
   </bean>
 
-  <bean id="indexUpdateManager" class="edu.psu.citeseerx.updates.IndexUpdateManager">
-    <property name="solrURL" value="${solr.updateUrl}"/>
-    <property name="CSXDAO" ref="citeseerx"/>
-    <property name="citeClusterDAO" ref="citegraph"/>
-    <property name="redoAll" value="false"/>
-  </bean>
-
   <bean id="documentSingleIndexUpdater" class="edu.psu.citeseerx.updates.DocumentSingleIndexUpdater">
     <property name="solrURL" value="${solr.updateUrl}"/>
     <property name="CSXDAO" ref="citeseerx"/>
