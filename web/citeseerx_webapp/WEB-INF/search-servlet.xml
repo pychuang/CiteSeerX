@@ -50,4 +50,7 @@
   <bean name="/new" class="edu.psu.citeseerx.web.NewDocController">
     <property name="CSXDAO" ref="citeseerx"/>
   </bean>
+
+  <bean name="/other_engine" class="edu.psu.citeseerx.web.SearchOtherEngineController">
+  </bean>
 </beans>

@@ -186,6 +186,11 @@
   
   <servlet-mapping>
     <servlet-name>search</servlet-name>
+    <url-pattern>/other_engine</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>search</servlet-name>
     <url-pattern>/new</url-pattern>
   </servlet-mapping>
   

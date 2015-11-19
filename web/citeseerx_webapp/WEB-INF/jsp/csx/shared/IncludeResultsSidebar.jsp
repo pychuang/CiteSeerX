@@ -17,12 +17,12 @@
   </div>
 
   <div id="qother">Try your query at:
-    <c:url value='http://scholar.google.com/scholar' var="googleScholar"><c:param name='q' value='${ param.q }'/><c:param name='hl' value='en' /><c:param name='btnG' value='Search'/></c:url>
-    <c:url value='http://s2.allenai.org/search' var='s2'><c:param name='q' value='${ param.q }'/></c:url>
-    <c:url value='http://dblp.uni-trier.de/search' var='dblp'><c:param name='q' value='${ param.q }'/></c:url>
-    <c:url value='http://www.bing.com/search' var="Bing"><c:param name="q" value='${ param.q }'/></c:url>
-    <c:url value='https://www.google.com/search' var="Google"><c:param name="q" value='${ param.q }'/></c:url>
-    <c:url value='http://academic.research.microsoft.com/Search.aspx' var="Academic"><c:param name="query" value='${ param.q }'/><c:param name="submit" value='Search'/></c:url>
+    <c:url value="/other_engine?site=gs" var="googleScholar"><c:param name='q' value='${ param.q }'/><c:param name='hl' value='en' /><c:param name='btnG' value='Search'/></c:url>
+    <c:url value='/other_engine?site=s2' var='s2'><c:param name='q' value='${ param.q }'/></c:url>
+    <c:url value='/other_engine?site=dblp' var='dblp'><c:param name='q' value='${ param.q }'/></c:url>
+    <c:url value='/other_engine?site=bing' var="Bing"><c:param name="q" value='${ param.q }'/></c:url>
+    <c:url value='/other_engine?site=google' var="Google"><c:param name="q" value='${ param.q }'/></c:url>
+    <c:url value='/other_engine?site=mas' var="Academic"><c:param name="q" value='${ param.q }'/><c:param name="submit" value='Search'/></c:url>
     <table border="0" cellspacing="5" cellpadding="5" >
       <tr>
           <td><a href="<c:out value='${ s2 }' escapeXml="true"/>" title="AllenAI Semantic Scholar"><img src="<c:url value="/images/ai2_icon.png"/>" alt="Semantic Scholar" height="30" width="30"/></a></td>
