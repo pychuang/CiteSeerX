@@ -27,7 +27,7 @@
             <div class="result">
               <h3>
                 <c:if test="${ hit.inCollection }">
-                  <a class="remove doc_details" href="<c:url value='/viewdoc/summary?doi=${ hit.doi }&rank=${ start + status.count }&osm=${ opensearch_marker }'/>">
+                  <a class="remove doc_details" href="<c:url value='/viewdoc/summary?doi=${ hit.doi }&rank=${ start + status.count }&q=${ query }&osm=${ opensearch_marker }'/>">
                   <c:if test="${ ! empty hit.title }"><c:out value="${ hit.title }" escapeXml="false"/></c:if>
                   <c:if test="${ empty hit.title }">Unknown Title</c:if></a>
                 </c:if>
