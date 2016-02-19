@@ -148,6 +148,7 @@ public class SolrSelectUtils {
             String publ = doc.optString("publisher");
             String tech = doc.optString("tech");
             Long vtime = doc.optLong("vtime");
+            String team = doc.optString("team");
             
             if (title == null || title.length()<2 || title.equals("null")) {
                 hit.setTitle("unknown title");
@@ -240,6 +241,10 @@ public class SolrSelectUtils {
                 }
             }
             
+            if (team != null && !team.equals("null")) {
+                hit.setTeam(team);
+            }
+
             hits.add(hit);
             
         }

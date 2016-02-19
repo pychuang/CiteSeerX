@@ -49,6 +49,7 @@ public class ThinDoc implements Serializable {
     private boolean inCollection; 
     private String observations;
     private Date updateTime;
+    private String team;    // dirty stuff for TREC OpenSearch
     
     public String getAuthors() {
         return authors;
@@ -184,6 +185,13 @@ public class ThinDoc implements Serializable {
     public String getRfc3339Time() {
         return DateUtils.formatRFC3339(updateTime);
     } //- getRfc3339Time
+
+    public String getTeam() {
+        return team;
+    }
+    public void setTeam(String team) {
+        this.team = team;
+    }
 
     /* (non-Javadoc)
      * @see java.lang.Object#toString()

@@ -17,9 +17,11 @@
         </c:when>
         <c:otherwise>
           <c:set var="opensearch_marker" value="" />
-          <c:forEach var="hit" items="${ hits }" varStatus="status">
-            <c:set var="opensearch_marker" value="${ opensearch_marker }${ start + status.count }:${ hit.doi }," />
-          </c:forEach>
+          <c:if test="${ ! empty ossid }">
+            <c:forEach var="hit" items="${ hits }" varStatus="status">
+              <c:set var="opensearch_marker" value="${ opensearch_marker }${ start + status.count }:${ hit.doi }:${ hit.team }," />
+            </c:forEach>
+          </c:if>
 
           <%-- Sorting Dropdown--%>
           <c:if test="${ error }"><div class="error"><c:out value="${ errorMsg }" escapeXml="false"/></div></c:if>
@@ -27,7 +29,7 @@
             <div class="result">
               <h3>
                 <c:if test="${ hit.inCollection }">
-                  <a class="remove doc_details" href="<c:url value='/viewdoc/summary?doi=${ hit.doi }&rank=${ start + status.count }&q=${ query }&osm=${ opensearch_marker }'/>">
+                  <a class="remove doc_details" href="<c:url value='/viewdoc/summary?doi=${ hit.doi }&rank=${ start + status.count }&q=${ query }&osm=${ opensearch_marker }&ossid=${ ossid }'/>">
                   <c:if test="${ ! empty hit.title }"><c:out value="${ hit.title }" escapeXml="false"/></c:if>
                   <c:if test="${ empty hit.title }">Unknown Title</c:if></a>
                 </c:if>

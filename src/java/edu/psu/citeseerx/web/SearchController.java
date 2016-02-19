@@ -460,6 +460,7 @@ public class SearchController implements Controller {
         Integer numFound = 0;
         List<ThinDoc> hits = new ArrayList<ThinDoc>();
         List<String> coins = new ArrayList<String>();
+	String ossid="";
 
         Integer start = (Integer)queryParameters.get(START);
         if (start >= maxresults) {
@@ -474,6 +475,7 @@ public class SearchController implements Controller {
                 JSONObject output = executeSolrQuery(solrSelectUrl, solrQuery);
                 JSONObject responseObject = output.getJSONObject("response");
                 numFound = responseObject.getInt("numFound");
+                ossid = responseObject.optString("ossid");
                 hits = SolrSelectUtils.buildHitListJSON(output);
 
                 // Obtain COinS representation for hits.
@@ -528,6 +530,7 @@ public class SearchController implements Controller {
 
         model.put("hits", (!error) ? hits : new ArrayList<ThinDoc>());
         model.put("coins", (!error) ? coins : new ArrayList<String>());
+        model.put("ossid", ossid);
 
         String feed = (String)queryParameters.get(FEED);
         if (feed != null) {
